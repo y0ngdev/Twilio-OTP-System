@@ -1,0 +1,25 @@
+<div class="page">
+		<section class="register">
+			<div class="form-container">
+				<form method="POST">
+					<h2 class="text-center"><strong>Create</strong> an account.</h2>
+
+					<?php if ($err_message) : ?>
+						<div class="callout text-danger">
+							<p><?php echo $err_message; ?></p>
+						</div>
+					<?php endif; ?>
+					
+					<div class="mb-3"><input class="form-control" type="text" name="fullName" placeholder="Full Name" value="<?php if (isset($_POST['fullName'])) echo $_POST['fullName']; ?>" ></div>
+					<div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" ></div>
+					<div class="mb-3"><input class="form-control" type="tel" id="phone" name="phone" placeholder="Phone Number" value="<?php  echo $_SESSION['init']['phone']; ?>"  disabled></div>
+					<div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" minlength="8" required></div>
+					<div class="mb-3"><input class="form-control" type="password" name="re_password" placeholder="Password (repeat)" ></div>
+					<div class="mb-3">
+						<div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox"required>I agree to the license terms.</label></div>
+					</div>
+					<div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" name="signup" required>Sign Up</button></div>
+				</form>
+			</div>
+		</section>
+	</div>
